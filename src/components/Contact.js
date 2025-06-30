@@ -31,7 +31,7 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("https://farrel-r.xyz/contact", {
+    let response = await fetch("https://farrel-r.xyz/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
