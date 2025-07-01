@@ -35,7 +35,7 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>I specialize in app/website development, penetration testing, and 3D computer graphics animation (Blender). My core strength is building and securing digital solutions, leveraging my CTF experience to identify and mitigate vulnerabilities. I'm also familiar with HTML, CSS, Java, PHP, JavaScript, Python, and Android Studio. I combine technical development, cybersecurity, and creating immersive 3D visuals.</p>
+                        <p>I specialize in app/website development, penetration testing, and 3D computer graphics animation (Blender). My core strength is building and securing digital solutions, leveraging my CTF experience to identify and mitigate vulnerabilities. I'm also familiar with HTML, CSS, Java, PHP, Laravel, React, JavaScript, Python, and Android Studio. I combine technical development, cybersecurity, and creating immersive 3D visuals.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={meter4} alt="Image" />
