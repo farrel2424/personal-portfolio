@@ -7,6 +7,7 @@ import logo from "../assets/img/logogo.png"; // Pastikan path ini benar
 import navIcon1 from "../assets/img/nav-icon1.svg"; // Pastikan path ini benar
 import navIcon3 from "../assets/img/nav-icon3.svg"; // Pastikan path ini benar
 import axios from 'axios'; // Import axios untuk EmailJS
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -20,6 +21,7 @@ export const Contact = () => {
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
   const [status, setStatus] = useState({});
+  const [isVerified, setIsVerified] = useState(false);
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -28,8 +30,21 @@ export const Contact = () => {
     });
   };
 
+  const handleCaptchaChange = (value) => {
+    // The 'value' is the reCAPTCHA token. If it exists, the user is verified.
+    if (value) {
+      setIsVerified(true);
+    }
+  };
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isVerified) {
+      setStatus({ success: false, message: 'Please verify that you are not a robot.' });
+      return;
+    }
     setButtonText("Sending...");
 
     // --- LOGIKA EMAILJS DIMULAI DI SINI ---
@@ -103,12 +118,20 @@ export const Contact = () => {
                       </Col>
                       <Col size={12} className="px-1">
                         <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                        <button type="submit"><span>{buttonText}</span></button>
+                        <button type="submit" disabled={!isVerified}><span>{buttonText}</span></button>
                       </Col>
+
+                      <Col size={12} className="px-1" style={{marginTop: '20px'}}>
+                        <ReCAPTCHA
+                          sitekey="6LfN7HUrAAAAAPUTmU61uIopLY-rEv1zNycLj9My" // IMPORTANT: Replace with your actual Site Key
+                          onChange={handleCaptchaChange}
+                        />
+                      </Col>
+
                       {
                         status.message &&
                         <Col>
-                          <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
+                          <p className={status.success === false ? "danger-message" : "success-message"}>{status.message}</p>
                         </Col>
                       }
                     </Row>

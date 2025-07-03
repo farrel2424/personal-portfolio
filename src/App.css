@@ -6,7 +6,7 @@
 }
 @font-face {
 	font-family: Centra;
-	src: url('./assets/font/AstrionisRegular-lxOme.ttf');
+	src: url('./assets/font/CyberaFontDemo-m2oj5.otf');
 	font-weight: 500;
 }
 @font-face {
@@ -269,6 +269,26 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     -1px  1px 0 #000,
      1px  1px 0 #000;
 }
+
+.about-me-box {
+    background-color: #000000; /* Black with some transparency */
+    border-radius: 20px; /* Adjust for more or less rounded corners */
+    padding: 25px;
+    margin-top: 30px;
+    display: inline-block; /* Ensures the box wraps the content */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: a subtle border */
+}
+
+.about-me-box p {
+    text-shadow: none; /* Removes the outer text-shadow which is not needed here */
+    width: 100%;
+    margin-bottom: 1rem; /* Adds a little space between the two paragraphs */
+}
+
+.about-me-box p:last-child {
+    margin-bottom: 0; /* Removes margin from the last paragraph */
+}
+
 .banner button {
   color: #fff;
   font-weight: 700;
@@ -286,6 +306,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .banner button:hover svg {
   margin-left: 25px;
+}
+
+.banner img {
+  animation: updown 3s linear infinite;
 }
 
 @keyframes updown {
@@ -539,6 +563,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .contact form button:hover::before {
   width: 100%;
+}
+
+
+
+/* This class applies your new font to the success message */
+.success-message {
+  font-family: 'Centra', sans-serif; /* Use your custom font with a fallback */
+  color: #20c997; /* A nice green color */
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+/* This is for the error message */
+.danger-message {
+  color: #ff4757; /* A red color for errors */
+  font-size: 16px;
+  padding-top: 15px;
 }
 
 /************ Footer Css ************/

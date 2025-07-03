@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/m-Photoroom.png";
+import headerImg from "../assets/img/headerimage.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -57,8 +57,10 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <h1>{`I'm Farrel, a`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Pentester", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                <div className="about-me-box">
                   <p>A passionate and communicative Informatics student with a growing focus on Cybersecurity and software development. I do solving real-world problems through code, exploring digital security, building applications, and even 3D CGA.</p>
                   <p>Let’s connect and build something cool — or break it (ethically, of course).</p>
+                </div>
               </div>}
             </TrackVisibility>
             
@@ -67,7 +69,7 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "" : ""}>
+                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
                   <img src={headerImg} alt="Header Img" style={{ maxWidth: '90%', height: 'auto' }}/>
                 </div>}
             </TrackVisibility>
