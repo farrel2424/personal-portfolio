@@ -50,7 +50,7 @@ export const Contact = () => {
     // --- LOGIKA EMAILJS DIMULAI DI SINI ---
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID; // Ganti dengan Service ID Anda
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID; // Ganti dengan Template ID Anda
-    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;   // Ganti dengan Public Key Anda
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY// Ganti dengan Public Key Anda
 
     const data = {
       service_id: serviceId,
@@ -123,7 +123,7 @@ export const Contact = () => {
 
                       <Col size={12} className="px-1" style={{marginTop: '20px'}}>
                         <ReCAPTCHA
-                          sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} // IMPORTANT: Replace with your actual Site Key
+                          sitekey="6LfN7HUrAAAAAPUTmU61uIopLY-rEv1zNycLj9My" // IMPORTANT: Replace with your actual Site Key
                           onChange={handleCaptchaChange}
                         />
                       </Col>
