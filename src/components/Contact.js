@@ -48,9 +48,9 @@ export const Contact = () => {
     setButtonText("Sending...");
 
     // --- LOGIKA EMAILJS DIMULAI DI SINI ---
-    const serviceId = 'service_3if7lv5'; // Ganti dengan Service ID Anda
-    const templateId = 'template_ib1s668'; // Ganti dengan Template ID Anda
-    const publicKey = 'D-sSy5Iaw1qaLF0mM';   // Ganti dengan Public Key Anda
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID; // Ganti dengan Service ID Anda
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID; // Ganti dengan Template ID Anda
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;   // Ganti dengan Public Key Anda
 
     const data = {
       service_id: serviceId,

@@ -1,0 +1,21 @@
+# Docker Compose version
+version: '3.8'
+
+# Define the services (containers) for your application
+services:
+  # The name of your service (e.g., 'web', 'frontend', 'app')
+  web:
+    # Build the Docker image from the Dockerfile in the current directory
+    build: .
+    # Name the container for easier identification
+    container_name: my-portfolio-app
+    # Map a port from your computer to the container's port
+    # Format: HOST_PORT:CONTAINER_PORT
+    ports:
+      - "3000:3000"
+    # Mount the project directory into the container for live-reloading during development
+    # Any changes on your local code will reflect inside the container instantly
+    volumes:
+      - .:/app
+      # Use an anonymous volume to prevent your local node_modules from overwriting the container's
+      - /app/node_modules
