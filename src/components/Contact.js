@@ -123,7 +123,7 @@ export const Contact = () => {
 
                       <Col size={12} className="px-1" style={{marginTop: '20px'}}>
                         <ReCAPTCHA
-                          sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} // IMPORTANT: Replace with your actual Site Key
+                          sitekey="6LfN7HUrAAAAAPUTmU61uIopLY-rEv1zNycLj9My"
                           onChange={handleCaptchaChange}
                         />
                       </Col>
